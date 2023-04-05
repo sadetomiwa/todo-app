@@ -15,8 +15,8 @@ export default function Taskfield({addTask}) {
 
   return (
     <form action="" onSubmit={handleClick}>
-      <h1 className='text-center'>TO DO List</h1>
-      <div className="form">
+      <h1 className=''>To-Do List</h1>
+      <div className="form w-50">
         {/* <label htmlFor="task">Task</label> */}
         <input className="form-control" type="text" name="task" placeholder='Enter a Task...' />
         <input type="submit" value="Add Task" className='btn btn-outline-danger w-100 mt-3' />

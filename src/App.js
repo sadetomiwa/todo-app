@@ -1,23 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
-import Taskfield from './components/Taskfield';
-import ToDoList from './components/ToDoList';
+import {Route, Routes} from 'react-router-dom';
+import ToDo from './views/ToDo';
+import PokemonDisplay from './views/PokemonDisplay';
 
 
 export default function App() {
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = (task) => {
-    console.log(task);
-    setTasks([...tasks, task]);
-  }
 
   return (
     <>
       <Navbar />
-      <div className="container">
-        <Taskfield  addTask={addTask}/>
-        <ToDoList taskList={tasks} />
+      <div className="container-fluid">
+        
+
+        <Routes>
+          <Route path='/' element={<ToDo />} />
+          <Route path='/pokemon' element={<PokemonDisplay />} />
+        </Routes>
 
       </div>
 
