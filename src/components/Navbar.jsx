@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">Reminders
+        <a className="navbar-brand" href="/">Reminders/Pokedex
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={16}

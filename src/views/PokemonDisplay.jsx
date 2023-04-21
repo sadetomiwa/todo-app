@@ -5,12 +5,21 @@ import PokemonFinder from '../components/PokemonFinder'
 export default function PokemonDisplay() {
   const [pokemon, setPokemon] = useState(null)
   const [pokemonName, setPokemonName] = useState('')
+
+  // function fetchMethods() {
+  //   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+  //   .then(res => res.json())
+  //   .then(data => setPokemon(data))
+  // }
+
+
   
   useEffect(() => {
     if (!pokemonName) {
       setPokemon(null);
       return;
     }
+    
     
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .then(response => response.json())
@@ -23,9 +32,11 @@ export default function PokemonDisplay() {
         setPokemon(null);
       });
   }, [pokemonName]);
+  
+  
 
   return (
-    <div>
+    <div >
       <h1 className='text-center'>PokeDEX</h1>
       <PokemonFinder pokemonName={pokemonName} setPokemonName={setPokemonName} />
       {pokemon ? <PokemonData pokemon={pokemon} /> : null}
